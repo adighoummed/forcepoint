@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="708da1fb-6406-44a5-a8d8-e3ff5ca66837" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/SeniorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/suites/test_senior.xml" afterDir="false" />
+    <list default="true" id="708da1fb-6406-44a5-a8d8-e3ff5ca66837" name="Changes" comment="second commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/URLCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/URLCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/URLPattern.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeniorExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SeniorExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeniorExam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <recent name="C:\Users\Adi.Ghoummed\IdeaProjects\ForcePointInterview" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Adi.Ghoummed/IdeaProjects/ForcePointInterview/src/test/resources/suites/test_senior.xml">
+  <component name="RunManager" selected="Application.SeniorExam">
     <configuration name="SeniorExam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SeniorExam" />
       <module name="forcepoint" />
@@ -89,10 +90,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SeniorExam" />
         <item itemvalue="TestNG.C:/Users/Adi.Ghoummed/IdeaProjects/ForcePointInterview/src/test/resources/suites/test_senior.xml" />
         <item itemvalue="Application.question1" />
         <item itemvalue="TestNG.C:/Users/Adi.Ghoummed/IdeaProjects/ForcePointInterview/src/test/resources/suites/test_parenthesis.xml" />
-        <item itemvalue="Application.SeniorExam" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660808658123</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit">
+      <created>1660812446239</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660812446239</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,14 +136,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/SeniorExam.java</url>
-          <line>16</line>
+          <line>20</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

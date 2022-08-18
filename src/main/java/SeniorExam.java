@@ -1,3 +1,7 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -5,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
+import java.util.UUID;
 
 public class SeniorExam {
     public static final String CSV_FILE_NAME = "url_categories_2020_06_21.csv";
@@ -71,7 +76,9 @@ public class SeniorExam {
             return -1;
         }
         else{
-            return hostnames.get(category).size();
+            Set<String> categoryHostnames = hostnames.get(category);
+            categoryHostnames.forEach(hostname -> System.out.println("Hostname: " + hostname));
+            return categoryHostnames.size();
         }
     }
 
@@ -83,10 +90,51 @@ public class SeniorExam {
             return -1;
         }
         else{
-            return categories.get(hostname).size();
+            Set<String> hostnameCategories = categories.get(hostname);
+            hostnameCategories.forEach(category -> System.out.println("Category: " + category));
+            return hostnameCategories.size();
         }
     }
 
+    public static URLCategories buildURLCategories() throws IOException {
+        HashMap<String, Set<String>> hostnamesPerCategory = countHostnamesPerCategory();
 
+        List<URLCategory> categories = new ArrayList<>();
+        for (Map.Entry<String,Set<String>> entry : hostnamesPerCategory.entrySet()){
+            List<URLPattern> urlPatterns = new ArrayList<>();
+            for (String pattern : entry.getValue()){
+                URLPattern urlPattern = new URLPattern();
+                urlPattern.setMatchType("EXACT");
+                urlPattern.setHost(pattern);
 
+                urlPatterns.add(urlPattern);
+            }
+
+            URLCategory category = new URLCategory();
+            category.setUrlCategoryId(UUID.randomUUID().toString());
+            category.setName(entry.getKey());
+            category.setUrlPatterns(urlPatterns);
+
+            categories.add(category);
+        }
+
+        URLCategories urlCategories = new URLCategories();
+        urlCategories.setUrlCategories(categories);
+
+        return urlCategories;
+    }
+
+    public static void urlCategoriesToJson() throws IOException{
+        URLCategories urlCategories = buildURLCategories();
+
+        //Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter("url_categories.json")){
+            gson.toJson(urlCategories,writer);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        urlCategoriesToJson();
+    }
 }
