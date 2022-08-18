@@ -1,0 +1,7 @@
+<suite name="Product Page Test" verbose="10">
+    <test name="Test Product Page" preserve-order="true">
+        <classes>
+            <class name="ParenthesisTest"/>
+        </classes>
+    </test>
+</suite>
